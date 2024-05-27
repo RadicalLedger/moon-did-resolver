@@ -1,6 +1,4 @@
 [![npm](https://img.shields.io/npm/dt/moon-did-resolver.svg)](https://www.npmjs.com/package/moon-did-resolver)
-[![npm](https://img.shields.io/npm/v/moon-did-resolver.svg)](https://www.npmjs.com/package/moon-did-resolver)
-[![codecov](https://codecov.io/gh/decentralized-identity/moon-did-resolver/branch/develop/graph/badge.svg)](https://codecov.io/gh/decentralized-identity/moon-did-resolver)
 
 # moon DID Resolver
 
