@@ -43,7 +43,7 @@ export const deployments: MoonDidRegistryDeployment[] = [
   {
     name: 'mainnet',
     chainId: 1284,
-    registry: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    registry: '0xeCCF09329968e51aC509500D95f171E40AAE0F3B',
   },
   {
     name: 'alpha',

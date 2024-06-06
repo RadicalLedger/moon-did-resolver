@@ -4,8 +4,8 @@ import { computeAddress, getAddress, toUtf8Bytes, toUtf8String, zeroPadBytes } f
 
 export const identifierMatcher = /^(.*)?(0x[0-9a-fA-F]{40}|0x[0-9a-fA-F]{66})$/
 export const nullAddress = '0x0000000000000000000000000000000000000000'
-export const DEFAULT_REGISTRY_ADDRESS = '0x1205411db2cC925253A57299f3313075DDD48439'
-export const DEFAULT_JSON_RPC = 'http://127.0.0.1:8545/'
+export const DEFAULT_REGISTRY_ADDRESS = '0xeCCF09329968e51aC509500D95f171E40AAE0F3B'
+export const DEFAULT_JSON_RPC = 'https://moonbeam.public.blastapi.io'
 export const MESSAGE_PREFIX = '0x1900'
 
 export type address = string

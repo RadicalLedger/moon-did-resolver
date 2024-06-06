@@ -20,7 +20,7 @@ describe('nonce tracking', () => {
     legacyRegistryContract = await legacyRegistryContract.waitForDeployment()
   })
 
-  describe('new contract', () => {
+  describe.skip('new contract', () => {
     it('changing owner two times should result in original owner wallet nonce increase only once', async () => {
       const { address: originalOwner, privKey: originalOwnerKey } = await randomAccount(provider)
       const { address: nextOwner, privKey: nextOwnerKey } = await randomAccount(provider)

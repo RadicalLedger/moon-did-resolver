@@ -4,9 +4,9 @@ import { interpretIdentifier } from '../helpers'
 
 jest.setTimeout(30000)
 
-describe.skip('moonResolver (alt-chains)', () => {
-  const addr = '0xd0dbe9d3698738f899ccd8ee27ff2347a7faa4dd'
-  // const addr = '0x35252b703078f9E9E96ffbC739372fE5eF6aebAF'
+describe('moonResolver (alt-chains)', () => {
+  // const addr = '0xd0dbe9d3698738f899ccd8ee27ff2347a7faa4dd'
+  const addr = '0x35252b703078f9E9E96ffbC739372fE5eF6aebAF'
   const { address } = interpretIdentifier(addr)
   const checksumAddr = address
 
@@ -72,6 +72,39 @@ describe.skip('moonResolver (alt-chains)', () => {
               type: 'EcdsaSecp256k1RecoveryMethod2020',
               controller: did,
               blockchainAccountId: `eip155:1287:${checksumAddr}`,
+            },
+          ],
+          authentication: [`${did}#controller`],
+          assertionMethod: [`${did}#controller`],
+        },
+      })
+    })
+    it.only('resolves on mainnet when configured', async () => {
+      const did = 'did:moon:' + addr
+      const moon = getResolver({
+        networks: [
+          {
+            name: 'mainnet',
+            rpcUrl: 'https://moonbeam.public.blastapi.io',
+          },
+        ],
+      })
+      const resolver = new Resolver(moon)
+      const result = await resolver.resolve(did)
+      console.log(result)
+
+      expect(result).toEqual({
+        didDocumentMetadata: {},
+        didResolutionMetadata: { contentType: 'application/did+ld+json' },
+        didDocument: {
+          '@context': expect.anything(),
+          id: did,
+          verificationMethod: [
+            {
+              id: `${did}#controller`,
+              type: 'EcdsaSecp256k1RecoveryMethod2020',
+              controller: did,
+              blockchainAccountId: `eip155:1284:${checksumAddr}`,
             },
           ],
           authentication: [`${did}#controller`],
